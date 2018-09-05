@@ -25,8 +25,7 @@ class CryptoDataGrabber(object):
         self.database = dataset.connect(self.db_url)
         for symbol in self.symbols:
             if self.exchange.has['fetchOHLCV']:
-                """print(f'Obtaining OHLCV data for')
-                """
+                print(f'Obtaining OHLCV data for {symbol}')
                 data = self.exchange.fetch_ohlcv(symbol, '1d')
                 data = list(zip(*data))
                 data[0] = [datetime.datetime.fromtimestamp(ms / 1000)
