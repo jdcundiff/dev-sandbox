@@ -9,13 +9,19 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import threading
 import dataset
+from dotenv import load_dotenv, find_dotenv
+import os
 
 
 class CryptoDataGrabber(object):
 
     def __init__(self):
         """"""
-        self.exchange = ccxt.binance()
+        load_dotenv(find_dotenv())
+        self.exchange = ccxt.binance({
+            'apiKey': os.getenv("OP_API_KEY"),
+            'secret': os.getenv("OP_SECRET"),
+        })
         self.exchange.load_markets()
         self.delay_seconds = self.exchange.rateLimit / 1000
         self.symbols = self.exchange.markets
