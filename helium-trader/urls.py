@@ -4,7 +4,6 @@ from django.urls import path
 from django.contrib import admin
 admin.autodiscover()
 
-import hello.views
 import portfolio.views
 
 # Examples:
@@ -13,6 +12,5 @@ import portfolio.views
 
 urlpatterns = [
     url(r'^$', portfolio.views.index, name='index'),
-    url(r'^db', hello.views.db, name='db'),
     path('admin/', admin.site.urls),
 ]
