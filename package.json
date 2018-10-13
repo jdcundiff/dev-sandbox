@@ -1,0 +1,35 @@
+{
+  "name": "helium-trader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "postInstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdcundiff/helium-trader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdcundiff/helium-trader/issues"
+  },
+  "homepage": "https://github.com/jdcundiff/helium-trader#readme",
+  "devDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "^2.0.4",
+    "webpack-cli": "^3.1.2"
+  },
+  "engines": {
+    "node": "9.4.0",
+    "npm": "6.4.1"
+  }
+}
