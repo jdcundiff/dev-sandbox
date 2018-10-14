@@ -1,16 +1,8 @@
 from django.conf.urls import include, url
-from django.urls import path
+from portfolio import views
+import frontend.urls
 
-from django.contrib import admin
-admin.autodiscover()
-
-import portfolio.views
-
-# Examples:
-# url(r'^$', 'gettingstarted.views.home', name='home'),
-# url(r'^blog/', include('blog.urls')),
-
+# Use rest API and routers to handle URL's.
 urlpatterns = [
-    url(r'^$', portfolio.views.index, name='index'),
-    path('admin/', admin.site.urls),
+    url(r'', include(frontend.urls)),
 ]
