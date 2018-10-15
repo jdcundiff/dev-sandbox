@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -6,17 +7,22 @@ class Projects extends React.Component {
   }
 
   render() {
-    let data = this.props.length
-    let comp = !data ? (<p>Projects</p>) :
-      (
-        <div className="box">
-          <h1 className="title">Jeremiah Cundiff</h1>
-          <h2 className="subtitle">Quantitative Analyst</h2>
+    return (
+      <div className="card">
+        <header className="card-header">
+          <p className="card-header-title">Projects</p>
+        </header>
+        <div className="card-content">
+          <div className="media-content">
+          </div>
         </div>
-      );
-
-    return comp;
+      </div>
+    );
   }
 }
+
+Projects.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default Projects;

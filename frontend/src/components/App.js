@@ -1,24 +1,19 @@
 import React from "react";
-import DataProvider from "./DataProvider";
-import Bio from "./Bio";
-import Skills from "./Skills";
-import Projects from "./Projects";
+import Sidebar from "./Sidebar";
+import CenterPage from "./CenterPage";
 
 class App extends React.Component {
   render() {
     {/*
-      * Use DataProvider to fetch data for each component
-      * using Django Apps as the backend
+      * Each component uses DataProvider to fetch data
+      * using Django Apps as the backend to serve the data
     */}
     return (
       <React.Fragment>
-        {/* Sidebar */}
-        <DataProvider endpoint="api/bio/" render={data => <Bio data={data} />} />
-        <DataProvider endpoint="api/skills/" render={data => <Skills data={data} />} />
-
-        {/* Center page */}
-        <DataProvider endpoint="api/projects/" render={data => <Projects data={data} />} />
-
+        <div className="columns is-mobile">
+          <Sidebar/>
+          <CenterPage/>
+        </div>
       </React.Fragment>
     );
   }
