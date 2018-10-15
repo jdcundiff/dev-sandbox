@@ -1,12 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ProjectRow from "./ProjectRow"
 
 class Projects extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const data = this.props.data;
+    const rows = [];
+
+    data.forEach((row) => {
+      rows.push(
+        <ProjectRow data={row}/>
+      );
+    });
+
     return (
       <div className="card">
         <header className="card-header">
@@ -14,6 +20,7 @@ class Projects extends React.Component {
         </header>
         <div className="card-content">
           <div className="media-content">
+            {rows}
           </div>
         </div>
       </div>

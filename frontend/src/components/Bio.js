@@ -2,13 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Bio extends React.Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
   render() {
-    let data = this.props.data[0];
+    const data = this.props.data[0];
     return (
       <div className="card">
         <div className="card-image">
