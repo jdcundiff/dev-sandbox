@@ -1,0 +1,9 @@
+from django.db import models
+
+class Bio(models.Model):
+    first_name = models.CharField(max_length=15)
+    last_name = models.CharField(max_length=15)
+    title = models.CharField(max_length=30)
+    description = models.TextField()
+    github = models.URLField()
+    linkedin = models.URLField()
