@@ -1,0 +1,15 @@
+[
+  {
+    "model": "bio.bio",
+    "pk": 1,
+    "fields": {
+      "first_name": "Jeremiah",
+      "last_name": "Cundiff",
+      "email": "jdcundiff14@gmail.com",
+      "title": "Quantitative Analyst",
+      "description": "",
+      "github": "https://github.com/jdcundiff",
+      "linkedin": "https://www.linkedin.com/in/jeremiah-cundiff-49070096/"
+    }
+  }
+]
