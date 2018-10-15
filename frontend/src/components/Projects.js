@@ -1,13 +1,13 @@
 import React from "react";
 
-class Bio extends React.Component {
+class Projects extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     let data = this.props.length
-    let comp = !data ? (<p>BIO</p>) :
+    let comp = !data ? (<p>Projects</p>) :
       (
         <div className="box">
           <h1 className="title">Jeremiah Cundiff</h1>
@@ -19,4 +19,4 @@ class Bio extends React.Component {
   }
 }
 
-export default Bio;
+export default Projects;

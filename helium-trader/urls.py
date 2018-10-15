@@ -1,8 +1,11 @@
 from django.conf.urls import include, url
-from portfolio import views
+from django.urls import path
 import frontend.urls
 
 # Use rest API and routers to handle URL's.
 urlpatterns = [
     url(r'', include(frontend.urls)),
+    path('', include('bio.urls')),
+    path('', include('projects.urls')),
+    path('', include('skills.urls')),
 ]
