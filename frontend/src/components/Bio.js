@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import DataProvider from "./DataProvider";
+import Skills from "./Skills";
 
 class Bio extends React.Component {
   render() {
@@ -15,6 +17,7 @@ class Bio extends React.Component {
           <div className="media-content">
             <p className="title is-4">{data.first_name + ' ' + data.last_name}</p>
             <p className="subtitle is-6">{data.title}</p>
+            <DataProvider endpoint="api/skills/" render={data => <Skills data={data} />} />
           </div>
         </div>
         <footer className="card-footer">
