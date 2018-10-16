@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import SkillRow from "./SkillRow";
 
 class Skills extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const skills = this.props.data;
+    const rows = [];
+
+    skills.forEach((row) => {
+      rows.push(
+        <SkillRow data={row}/>
+      );
+    });
+
     return (
-      <div className="card">
-        <header className="card-header">
-          <p className="card-header-title">Skills</p>
-        </header>
-        <div className="card-content">
-          <div className="media-content">
-          </div>
-        </div>
+      <div>
+        {rows}
       </div>
     );
   }

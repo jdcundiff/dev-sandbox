@@ -3,5 +3,5 @@ from skills.serializers import SkillSerializer
 from rest_framework import generics
 
 class SkillListCreate(generics.ListCreateAPIView):
-    queryset = Skill.objects.all()
+    queryset = Skill.objects.order_by('-hours_spent')
     serializer_class = SkillSerializer

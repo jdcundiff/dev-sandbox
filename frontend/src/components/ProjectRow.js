@@ -9,8 +9,10 @@ class ProjectRow extends React.Component {
           <div className="content">
             <p>
               <strong>{project.title}</strong>
-              <p>{project.description}</p>
-              <small className="is-right">
+            </p>
+            <p>
+              {project.description}
+              <small>
                 <a href={project.github}>
                     {project.github}
                 </a>
