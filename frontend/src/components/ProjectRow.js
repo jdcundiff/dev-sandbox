@@ -4,23 +4,26 @@ class ProjectRow extends React.Component {
   render() {
     const project = this.props.data;
     return (
-      <article className="media">
-        <div className="media-content">
-          <div className="content">
-            <p>
-              <strong>{project.title}</strong>
-            </p>
-            <p>
-              {project.description}
-              <small>
-                <a href={project.github}>
-                    {project.github}
+      <div className="card">
+        <div className="card-content">
+          <div className="media">
+            <div className="media-left">
+              <h2 className="title">{project.title}</h2>
+            </div>
+            <div className="media-content">
+              <div className="subtitle tags">
+                <span className="tag is-primary">Project</span>
+                <a className="tag is-link" href={project.github}>
+                  <i className="fab fa-github"></i>
                 </a>
-              </small>
-            </p>
+              </div>
+            </div>
+          </div>
+          <div className="content">
+            {project.description}
           </div>
         </div>
-      </article>
+      </div>
     );
   }
 }
