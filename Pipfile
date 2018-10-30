@@ -4,7 +4,7 @@ verify_ssl = true
 
 [packages]
 gunicorn = "*"
-requests = "*"
+requests = ">=2.20.0"
 django = "*"
 django-heroku = "*"
 django-summernote = "*"
