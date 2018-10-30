@@ -6,5 +6,9 @@ class Bio(models.Model):
     email = models.EmailField(default=' ')
     title = models.CharField(max_length=30)
     description = models.TextField()
+    image = models.URLField()
     github = models.URLField()
     linkedin = models.URLField()
+
+    def __str__(self):
+        return self.email

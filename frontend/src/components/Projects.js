@@ -14,9 +14,9 @@ class Projects extends React.Component {
     });
 
     return (
-      <div>
+      <React.Fragment>
         {rows}
-      </div>
+      </React.Fragment>
     );
   }
 }

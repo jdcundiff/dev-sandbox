@@ -1,3 +1,5 @@
+from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 class Update(models.Model):
@@ -9,6 +11,20 @@ class Update(models.Model):
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+class Tag(models.Model):
+    project = models.ForeignKey(
+        'Project',
+        on_delete=models.CASCADE,
+    )
+    title = models.CharField(max_length=20)
+    info = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.title
 
 class Project(models.Model):
     LIMBO = 'LI'
@@ -29,4 +45,6 @@ class Project(models.Model):
     github = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    pass
+
+    def __str__(self):
+        return self.title

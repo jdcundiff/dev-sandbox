@@ -3,4 +3,4 @@ from .models import Skill
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'proficiency', 'hours_spent')

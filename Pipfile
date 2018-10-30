@@ -3,11 +3,14 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [packages]
-django = "*"
 gunicorn = "*"
+requests = ">=2.20.0"
+django = "*"
 django-heroku = "*"
-requests = "*"
+django-summernote = "*"
 djangorestframework = "*"
+python-dotenv = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
