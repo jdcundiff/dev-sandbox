@@ -6,7 +6,7 @@ To preface, this is not a point and click trading platform, but more of a sandbo
 
 Creative thought processes will be exercised publicly to aid in personal growth.
 
-Tracking improvements for skills of various tools will be updated and examined regularly to ensure best practices are being followed as experience is gained. The preference is to maximize the hours spent with good habits. 
+Hours spent with various tools will be updated and examined regularly to ensure best practices are being followed as experience is gained. The preference is to maximize the hours spent with good habits. 
 
 # Installation
 As stated above, this isn't much more than a personal project. However, you're welcome to use the code here to start a portfolio of sorts.
