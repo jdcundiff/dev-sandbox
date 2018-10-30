@@ -5,4 +5,6 @@ from .models import Project, Update
 @admin.register(Project, Update)
 class ProjectAdmin(SummernoteModelAdmin):
     summernote_fields = '__all__'
-    pass
+
+    def __str__(self):
+        return self.title

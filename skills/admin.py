@@ -3,4 +3,5 @@ from .models import Skill
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
-    pass
+    def __str__(self):
+        return self.name

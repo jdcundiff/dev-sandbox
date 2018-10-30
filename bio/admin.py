@@ -3,5 +3,6 @@ from .models import Bio
 
 @admin.register(Bio)
 class BioAdmin(admin.ModelAdmin):
-    pass
+    def __str__(self):
+        return self.name
 
