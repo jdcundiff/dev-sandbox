@@ -9,7 +9,7 @@ class ProjectRow extends React.Component {
           <div className="media">
             <div className="media-content">
               <p className="title is-4">{project.title}</p>
-              <p className="subtitle is-6">{project.description}</p>
+              <p className="subtitle is-6" dangerouslySetInnerHTML={{__html: project.description}}/>
             </div>
           </div>
           <div className="content">
