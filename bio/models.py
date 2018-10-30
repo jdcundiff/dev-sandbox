@@ -9,3 +9,6 @@ class Bio(models.Model):
     image = models.URLField()
     github = models.URLField()
     linkedin = models.URLField()
+
+    def __str__(self):
+        return self.email

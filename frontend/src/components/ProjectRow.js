@@ -1,4 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
+import DataProvider from "./DataProvider";
+import ProjectUpdates from "./ProjectUpdates";
+import ProjectTags from "./ProjectTags";
 
 class ProjectRow extends React.Component {
   render() {
@@ -13,7 +17,7 @@ class ProjectRow extends React.Component {
             </div>
           </div>
           <div className="content">
-          {/*TODO put project updates here*/}
+            <DataProvider endpoint="api/updates/" render={data => <ProjectUpdates data={data} />} />
           </div>
           <div className="media">
             <div className="media-content">
@@ -27,27 +31,7 @@ class ProjectRow extends React.Component {
                   </div>
                 </div>
 
-                {/*TODO: Add db table for stack and remove hardcoding */}
-                <div className="control">
-                  <div className="tags has-addons">
-                    <span className="tag is-dark">React</span>
-                    <span className="tag is-info">16.5.2</span>
-                  </div>
-                </div>
-
-                <div className="control">
-                  <div className="tags has-addons">
-                    <span className="tag is-dark">Django</span>
-                    <span className="tag is-info">2.1.2</span>
-                  </div>
-                </div>
-
-                <div className="control">
-                  <div className="tags has-addons">
-                    <span className="tag is-dark">Python</span>
-                    <span className="tag is-info">3.6.6</span>
-                  </div>
-                </div>
+                <DataProvider endpoint="api/tags/" render={data => <ProjectTags data={data} />} />
               </div>
             </div>
           </div>
@@ -56,5 +40,9 @@ class ProjectRow extends React.Component {
     );
   }
 }
+
+ProjectRow.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default ProjectRow;

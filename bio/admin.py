@@ -3,6 +3,5 @@ from .models import Bio
 
 @admin.register(Bio)
 class BioAdmin(admin.ModelAdmin):
-    def __str__(self):
-        return self.name
-
+    list_display = ('first_name', 'last_name')
+    list_display_links = ('first_name', 'last_name')
