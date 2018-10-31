@@ -27,18 +27,24 @@ class Tag(models.Model):
         return self.title
 
 class Project(models.Model):
-    LIMBO = 'LI'
-    IN_PROGRESS = 'IP'
-    COMPLETE = 'CO'
     STATUS_CHOICES = (
-        (LIMBO, 'Limbo'),
-        (IN_PROGRESS, 'In Progress'),
-        (COMPLETE, 'Complete'),
+        ('LI', 'Limbo'),
+        ('IP', 'In Progress'),
+        ('CO', 'Complete'),
     )
     status = models.CharField(
         max_length=2,
         choices=STATUS_CHOICES,
-        default=LIMBO
+        default='IP'
+    )
+    CATEGORY_CHOICES = (
+        ('WR', 'Work'),
+        ('PR', 'Personal'),
+    )
+    category = models.CharField(
+        max_length=2,
+        choices=CATEGORY_CHOICES,
+        default='WR'
     )
     title = models.CharField(max_length=60)
     description = models.TextField()

@@ -5,6 +5,7 @@ class Bio(models.Model):
     last_name = models.CharField(max_length=15)
     email = models.EmailField(default=' ')
     title = models.CharField(max_length=30)
+    objective = models.BooleanField(default=True)
     description = models.TextField()
     image = models.URLField()
     github = models.URLField()

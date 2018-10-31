@@ -1,24 +1,24 @@
 import React from "react";
 
 class ProjectTags extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {tags: props.data};
+  }
+
   render() {
-    const tags = this.props.data;
-    const rows = [];
-
-    tags.forEach((tag) => {
-      rows.push(
-        <div className="control">
-          <div className="tags has-addons">
-            <span className="tag is-dark">{tag.title}</span>
-            <span className="tag is-info">{tag.info}</span>
-          </div>
-        </div>
-      );
-    });
-
     return (
       <React.Fragment>
-        {rows}
+        {this.state.tags.map((tag, index) => {
+          return (
+            <div className="control" key={index} >
+              <div className="tags has-addons">
+                <span className="tag is-radiusless is-dark">{tag.title}</span>
+                <span className="tag is-radiusless is-info">{tag.info}</span>
+              </div>
+            </div>
+          );
+        })}
       </React.Fragment>
     );
   }

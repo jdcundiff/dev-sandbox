@@ -4,9 +4,10 @@ import DataProvider from "./DataProvider";
 import ProjectUpdates from "./ProjectUpdates";
 import ProjectTags from "./ProjectTags";
 
-class ProjectRow extends React.Component {
+class Project extends React.Component {
   render() {
-    const project = this.props.data;
+    const project = this.props.project;
+
     return (
       <div className="card">
         <div className="card-content">
@@ -20,17 +21,16 @@ class ProjectRow extends React.Component {
             <DataProvider endpoint="api/updates/" render={data => <ProjectUpdates data={data} />} />
           </div>
           <div className="media">
-            <div className="media-content">
+            <div className="media-content is-clipped">
               <div className="field is-grouped is-grouped-multiline">
                 <div className="control">
                   <div className="tags has-addons">
-                    <span className="tag is-dark">Project</span>
-                    <a className="tag is-link" href={project.github}>
-                      <i className="fab fa-github"></i>
+                    <span className="tag is-radiusless is-dark">{project.category == 'PR' ? 'Personal' : 'Work'} Project</span>
+                    <a className="tag is-radiusless is-link" href={project.github}>
+                      <i className={project.category == 'PR' ? 'fab fa-github' : 'fas fa-briefcase'}></i>
                     </a>
                   </div>
                 </div>
-
                 <DataProvider endpoint="api/tags/" render={data => <ProjectTags data={data} />} />
               </div>
             </div>
@@ -41,8 +41,8 @@ class ProjectRow extends React.Component {
   }
 }
 
-ProjectRow.propTypes = {
+Project.propTypes = {
   data: PropTypes.array.isRequired
 };
 
-export default ProjectRow;
+export default Project;

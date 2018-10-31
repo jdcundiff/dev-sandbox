@@ -8,16 +8,27 @@ class Bio extends React.Component {
     const data = this.props.data[0];
     return (
       <div className="card">
-        <div className="card-image">
+        <div className="card-image is-hidden-mobile">
           <figure className="image">
             <img src={data.image} alt="Bio image"/>
           </figure>
         </div>
         <div className="card-content">
-          <div className="media-content">
-            <p className="title is-4">{data.first_name + ' ' + data.last_name}</p>
-            <p className="subtitle is-6">{data.title}</p>
-            <DataProvider endpoint="api/skills/" render={data => <Skills data={data} />} />
+          <div className="media">
+            <div className="media-left is-hidden-tablet">
+              <figure className="image is-96x96">
+                <img className="is-rounded" src={data.image} alt="Bio image"/>
+              </figure>
+            </div>
+            <div className="media-content has-text-centered">
+              <div className="title is-4">{data.first_name + ' ' + data.last_name}</div>
+              <div className="subtitle is-6">{data.title} {data.objective ? (<p className="heading">Objective</p>) : ''}</div>
+            </div>
+          </div>
+          <div className="media-content is-clipped">
+            <div className="columns is-multiline is-mobile">
+              <DataProvider endpoint="api/skills/" render={data => <Skills data={data} />} />
+            </div>
           </div>
         </div>
         <footer className="card-footer">
@@ -31,6 +42,11 @@ class Bio extends React.Component {
                 <a className="button is-white" href={data.linkedin}>
                   <span className="icon is-medium">
                       <i className="fab fa-linkedin"></i>
+                  </span>
+                </a>
+                <a className="button is-white" href={'mailto:'+data.email}>
+                  <span className="icon is-medium has-text-warning">
+                      <i className="fas fa-envelope"></i>
                   </span>
                 </a>
             </div>
