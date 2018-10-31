@@ -47,8 +47,11 @@ class Project(models.Model):
         default='WR'
     )
     title = models.CharField(max_length=60)
-    description = models.TextField()
-    github = models.URLField()
+    description = models.TextField(null=True)
+    github = models.URLField(null=True)
+    started_at = models.DateField(null=True)
+    ended_at = models.DateField(null=True, blank=True)
+    ongoing = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -9,11 +9,11 @@ class ProjectUpdates extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.updates.map((update, index) => {
+        {this.state.updates ? this.state.updates.map((update, index) => {
           return (
             <h4>{update.title}</h4>
           );
-        })}
+        }): ''}
       </React.Fragment>
     );
   }
