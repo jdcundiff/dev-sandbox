@@ -1,22 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SkillRow from "./SkillRow";
+import Skill from "./Skill";
 
 class Skills extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {skills: props.data};
+  }
+
   render() {
-    const skills = this.props.data;
-    const rows = [];
-
-    skills.forEach((row) => {
-      rows.push(
-        <SkillRow data={row}/>
-      );
-    });
-
     return (
-      <div>
-        {rows}
-      </div>
+      <React.Fragment>
+        {this.state.skills.map((skill, index) => {
+          return (
+            <div className="column is-one-third">
+              <Skill skill={skill} key={index}/>
+            </div>
+          );
+        })}
+      </React.Fragment>
     );
   }
 }

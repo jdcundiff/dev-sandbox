@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ProjectRow from "./ProjectRow"
+import Project from "./Project"
 
 class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {projects: props.data};
+  }
+
   render() {
-    const data = this.props.data;
-    const rows = [];
-
-    data.forEach((row) => {
-      rows.push(
-        <ProjectRow data={row}/>
-      );
-    });
-
     return (
       <React.Fragment>
-        {rows}
+        {this.state.projects.map((project, index) => {
+          return (
+            <Project project={project} key={index}/>
+          );
+        })}
       </React.Fragment>
     );
   }

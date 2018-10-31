@@ -1,19 +1,19 @@
 import React from "react";
 
 class ProjectUpdates extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {updates: props.data};
+  }
+
   render() {
-    const updates = this.props.data;
-    const rows = [];
-
-    updates.forEach((update) => {
-      rows.push(
-        <h4>{update.title}</h4>
-      );
-    });
-
     return (
       <React.Fragment>
-        {rows}
+        {this.state.updates.map((update, index) => {
+          return (
+            <h4>{update.title}</h4>
+          );
+        })}
       </React.Fragment>
     );
   }
