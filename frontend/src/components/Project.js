@@ -7,9 +7,12 @@ import ProjectTags from "./ProjectTags";
 class Project extends React.Component {
   render() {
     const project = this.props.project;
+    let cardStyle = {
+      marginBottom: '10px',
+    }
 
     return (
-      <div className="card">
+      <div style={cardStyle} className="card">
         <div className="card-content">
           <div className="media">
             <div className="media-content">
@@ -18,7 +21,7 @@ class Project extends React.Component {
             </div>
           </div>
           <div className="content">
-            <DataProvider endpoint="api/updates/" render={data => <ProjectUpdates data={data} />} />
+            <DataProvider endpoint={'api/updates/' + project.id} render={data => <ProjectUpdates data={data} />} />
           </div>
           <div className="media">
             <div className="media-content is-clipped">
@@ -31,7 +34,7 @@ class Project extends React.Component {
                     </a>
                   </div>
                 </div>
-                <DataProvider endpoint="api/tags/" render={data => <ProjectTags data={data} />} />
+                <DataProvider endpoint={'api/tags/' + project.id} render={data => <ProjectTags data={data} />} />
               </div>
             </div>
           </div>

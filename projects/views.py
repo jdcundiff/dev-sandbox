@@ -3,13 +3,15 @@ from projects.serializers import ProjectSerializer, UpdateSerializer, TagSeriali
 from rest_framework import generics
 
 class ProjectListCreate(generics.ListCreateAPIView):
-    queryset = Project.objects.all()
+    queryset = Project.objects.order_by('created_at')
     serializer_class = ProjectSerializer
 
 class UpdateListCreate(generics.ListCreateAPIView):
-    queryset = Update.objects.all()
     serializer_class = UpdateSerializer
+    def get_queryset(self):
+        return Update.objects.filter(project_id=self.kwargs['project_id'])
 
 class TagListCreate(generics.ListCreateAPIView):
-    queryset = Tag.objects.all()
     serializer_class = TagSerializer
+    def get_queryset(self):
+        return Tag.objects.filter(project=self.kwargs['project_id'])
