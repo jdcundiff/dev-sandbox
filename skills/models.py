@@ -12,7 +12,8 @@ class Skill(models.Model):
         choices=PROFICIENCY_CHOICES,
         default=FAMILIAR,
     )
-    hours_spent = models.IntegerField()
+    hours_spent = models.IntegerField(default=0)
+    years = models.IntegerField(default=0)
     name = models.CharField(max_length=30)
 
     def __str__(self):
