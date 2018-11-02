@@ -5,10 +5,9 @@ class Skill extends React.Component {
   render() {
     let name =  this.props.skill.name;
     let years = this.props.skill.years;
-    let hours = this.props.skill.hours_spent;
-    let time_spent = years > 0 ? 
+    let time_spent = years >= 1 ? 
       years + (years != 1 ? ' years' : ' year') : 
-      hours + (hours != 1 ? ' hours' : ' hour');
+      '<1 year';
     return (
       <div className="level-item has-text-centered">
         <div>

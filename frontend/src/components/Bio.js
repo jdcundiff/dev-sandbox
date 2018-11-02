@@ -25,10 +25,8 @@ class Bio extends React.Component {
               <div className="subtitle is-6">{data.title} {data.objective ? (<p className="heading">Objective</p>) : ''}</div>
             </div>
           </div>
-          <div className="media-content is-clipped">
-            <div className="columns is-multiline is-mobile">
-              <DataProvider endpoint="api/skills/" render={data => <Skills data={data} />} />
-            </div>
+          <div className="columns is-multiline is-mobile">
+            <DataProvider endpoint="api/skills/" render={data => <Skills data={data} />} />
           </div>
         </div>
         <footer className="card-footer">
