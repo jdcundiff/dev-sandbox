@@ -14,7 +14,9 @@ class ProjectTags extends React.Component {
             <div className="control" key={index} >
               <div className="tags has-addons">
                 <span className="tag is-radiusless is-dark">{tag.title}</span>
-                <span className="tag is-radiusless is-info">{tag.info}</span>
+                {(tag.info && tag.info != '') ? (
+                    <span className="tag is-radiusless is-info">{tag.info}</span>
+                  ) : ('')}
               </div>
             </div>
           );
