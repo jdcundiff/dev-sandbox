@@ -1,5 +1,7 @@
 import React from "react";
+import DataProvider from "./DataProvider";
 import Sidebar from "./Sidebar";
+import Bio from "./Bio";
 import CenterPage from "./CenterPage";
 
 class App extends React.Component {
@@ -11,9 +13,16 @@ class App extends React.Component {
     return (
       <div>
         <div className="columns is-multiline is-mobile">
-          <Sidebar/>
+          <div className="column">
+            <div className="columns">
+              <div className="column">
+                <DataProvider endpoint="api/bio/" render={data => <Bio data={data} />} />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="columns is-multiline is-mobile">
+          <Sidebar/>
           <CenterPage/>
         </div>
       </div>

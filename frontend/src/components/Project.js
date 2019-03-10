@@ -8,12 +8,13 @@ class Project extends React.Component {
   render() {
     const project = this.props.project;
     let cardStyle = {
-      marginBottom: '10px',
+      marginBottom: '20px',
+      paddingLeft: '10px',
     }
 
     return (
-      <div style={cardStyle} className="card">
-        <div className="card-content">
+      <div style={cardStyle} className="">
+        <div className="">
           <div className="media">
             <div className="media-content">
               <p className="title is-4">{project.title}</p>

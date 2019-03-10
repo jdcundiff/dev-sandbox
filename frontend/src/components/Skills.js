@@ -13,7 +13,7 @@ class Skills extends React.Component {
       <React.Fragment>
         {this.state.skills.map((skill, index) => {
           return (
-            <div className="column is-one-third-desktop is-half-touch">
+            <div className="column is-one-third">
               <Skill skill={skill} key={index}/>
             </div>
           );
