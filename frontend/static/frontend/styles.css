@@ -1,0 +1,13 @@
+html, .card {
+  background-color: #2d2d2d;
+  box-shadow: none;
+}
+
+body, body .subtitle {
+  color: #ababab;
+}
+
+body .title {
+  color: #fff;
+}
+
