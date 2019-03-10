@@ -9,9 +9,13 @@ class App extends React.Component {
       * using Django Apps as the backend to serve the data
     */}
     return (
-      <div className="columns is-multiline is-mobile">
-        <Sidebar/>
-        <CenterPage/>
+      <div>
+        <div className="columns is-multiline is-mobile">
+          <Sidebar/>
+        </div>
+        <div className="columns is-multiline is-mobile">
+          <CenterPage/>
+        </div>
       </div>
     );
   }
