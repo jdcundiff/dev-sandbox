@@ -22,6 +22,27 @@ class Bio extends React.Component {
             </div>
           </div>
         </div>
+        <div className="level">
+          <div className="level-item">
+            <div className="buttons">
+              <a className="button is-dark" href={data.github}>
+                <span className="icon is-medium">
+                  <i className="fab fa-github"></i>
+                </span>
+              </a>
+              <a className="button is-dark" href={data.linkedin}>
+                <span className="icon is-medium has-text-info">
+                  <i className="fab fa-linkedin"></i>
+                </span>
+              </a>
+              <a className="button is-dark" href={'mailto:'+data.email}>
+                <span className="icon is-medium has-text-warning">
+                  <i className="fas fa-envelope"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
