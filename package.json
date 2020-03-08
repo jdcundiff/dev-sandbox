@@ -1,11 +1,11 @@
 {
-  "name": "helium-trader",
+  "name": "dev-sandbox",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jdcundiff/helium-trader.git"
+    "url": "https://github.com/jdcundiff/dev-sandbox.git"
   },
   "scripts": {
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
