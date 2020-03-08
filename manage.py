@@ -5,7 +5,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helium-trader.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dev-sandbox.settings")
 
     from django.core.management import execute_from_command_line
 

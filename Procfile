@@ -1,1 +1,1 @@
-web: gunicorn helium-trader.wsgi
+web: gunicorn dev-sandbox.wsgi
