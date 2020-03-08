@@ -1,10 +1,5 @@
-# Helium Trader
-Quantitative trading and research platform that couples as a portfolio on the frontend. The primary focus is the research and discussion of algorithmic trading strategies. This includes snapshotting backtest results and discussing parameter adjustments that could yield differing outcomes.
-
-# About
-To preface, this is not a point and click trading platform, but more of a sandbox for testing ideas and providing in-depth discussions. A place that allows an overview of skills and experiences in a simple single-page view.
-
-Creative thought processes will be exercised publicly to aid in personal growth. I hope for it to act as a guide and a decent starting place for other quant beginners at some point.
+# Dev Sandbox
+Web based sandbox for developers.
 
 # Installation
 As stated above, this isn't much more than a personal project. However, you're welcome to use the code here to start a portfolio of sorts.
