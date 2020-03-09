@@ -21,7 +21,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-DEBUG = int(os.environ.get('DEBUG', default=0))
+DEBUG = int(os.environ.get('DEBUG', default=1))
 
 # Application definition
 
