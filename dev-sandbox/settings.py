@@ -16,7 +16,7 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'dev-sandbox0.heroku.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'dev-sandbox0.herokuapp.com', 'www.jcundiff.dev']
 
 
 # Quick-start development settings - unsuitable for production
