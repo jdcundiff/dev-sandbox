@@ -16,8 +16,12 @@ RUN apk update \
 				    && pip install psycopg2 \
 						    && apk del build-deps
 
+# install nodejs
+RUN apk add --update nodejs nodejs-npm
+
 # install dependencies
 COPY ./requirements.txt .
+RUN npm install
 RUN pip3 install -r requirements.txt
 
 # copy project
