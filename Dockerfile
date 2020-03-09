@@ -26,3 +26,6 @@ COPY . .
 # add and run as non-root user
 RUN adduser -D myuser
 USER myuser
+
+# run gunicorn
+CMD gunicorn dev-sandbox.wsgi:application --bind 0.0.0.0:$PORT
