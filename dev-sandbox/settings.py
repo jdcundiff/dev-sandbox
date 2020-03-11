@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import django_heroku
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,6 +22,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 DEBUG = int(os.environ.get('DEBUG', default=0))
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
 
@@ -54,6 +55,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dev-sandbox.urls'
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+}
 
 TEMPLATES = [
     {
@@ -107,4 +112,5 @@ USE_TZ = True
 
 SUMMERNOTE_THEME = 'lite'
 
-django_heroku.settings(locals())
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'

@@ -1,9 +1,0 @@
-build:
-    docker:
-          web: Dockerfile
-run:
-    web: gunicorn dev-sandbox.wsgi:application
-release:
-    image: web
-    command:
-      - python manage.py collectstatic --noinput
