@@ -1,0 +1,61 @@
+###########
+# BUILDER #
+###########
+
+# build python nodejs image
+FROM nikolaik/python-nodejs:latest as builder
+
+# set work directory
+WORKDIR /usr/src/app
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV PIPENV_VENV_IN_PROJECT 1
+
+# install node and pip dependencies
+COPY requirements.txt /usr/src/app
+RUN pipenv install \
+	&& pipenv lock -r > requirements.txt
+
+COPY package*.json ./
+RUN npm install
+
+#########
+# FINAL #
+#########
+
+# pull base image
+FROM nikolaik/python-nodejs:latest
+
+# Create directory for app user
+RUN mkdir -p /home/app
+
+# create user
+RUN groupadd -r app && useradd -r -g app app
+
+# create directories
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/web
+RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/staticfiles
+WORKDIR $APP_HOME
+
+# install pip dependencies
+RUN apt-get update -y && apt-get install -y libpq-dev
+COPY --from=builder /usr/src/app/requirements.txt .
+RUN pip install -U pip && pip install pipenv
+RUN pipenv install --deploy
+
+# install node dependencies
+COPY --from=builder /usr/src/app/package*.json ./
+RUN npm i -g npm@^6 && npm install
+
+# copy project
+COPY . $APP_HOME
+
+# chown all the files to the app user
+RUN chown -R app:app $APP_HOME
+
+# change to the app user
+USER app
