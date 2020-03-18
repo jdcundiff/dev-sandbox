@@ -2,6 +2,8 @@ version: '3'
 
 services:
   web:
+    image: jcundiff/dev-sandbox:latest
+    container_name: dev-sandbox
     build:
       context: .
       dockerfile: Dockerfile.prod
@@ -15,6 +17,7 @@ services:
     networks:
       - nginx_network
   nginx:
+    image: nginx:latest
     build: ./nginx
     volumes:
       - static_volume:/home/app/web/staticfiles
