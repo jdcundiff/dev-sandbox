@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import dj_database_url
+import requests
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,6 +24,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 
 DEBUG = int(os.environ.get('DEBUG', default=0))
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+
+try:
+    ELB_HEALTHCHECK_HOSTNAMES = [ip for network in requests.get(os.environ['ECS_CONTAINER_METADATA_URI']).json()['Networks'] for ip in network['IPv4Addresses']]
+    ALLOWED_HOSTS += ELB_HEALTHCHECK_HOSTNAMES
+except KeyError:
+    pass
+
 
 # Application definition
 
